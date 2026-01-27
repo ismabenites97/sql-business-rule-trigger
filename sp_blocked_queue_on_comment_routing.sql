@@ -1,4 +1,3 @@
--- BLOQUEIO DE FILA TEMPORARIAMENTE SUSPENSA
 IF EXISTS (
     SELECT 1
     FROM COMMENT_QUEUE_ROUTE
@@ -9,9 +8,9 @@ IF EXISTS (
 )
 BEGIN
     RAISERROR (
-        'Encaminhamento bloqueado: a fila selecionada está temporariamente suspensa.',
+        'A fila selecionada está temporariamente bloqueada.',
         16,
         1
-    )
-    RETURN
-END
+    );
+    RETURN;
+END;
