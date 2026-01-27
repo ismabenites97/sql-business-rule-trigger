@@ -26,7 +26,7 @@ Isso gerava inconsistência de dados e comportamentos inesperados.
 
 ---
 
-## 🛠️ Primeira abordagem: Stored Procedure (validação no fluxo)
+## Primeira abordagem: Stored Procedure (validação no fluxo)
 
 📄 Arquivo: `sp_blocked_queue_on_comment_routing.sql`
 
