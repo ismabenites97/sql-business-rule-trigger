@@ -5,12 +5,6 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    /* 
-       Validação baseada no conjunto inserido.
-       A tabela lógica INSERTED contém todas as filas
-       que o usuário tentou adicionar na aba "Encaminhar".
-    */
-
     -- Verifica se existe alguma fila bloqueada no conjunto inserido
     IF EXISTS (
         SELECT 1
@@ -18,10 +12,6 @@ BEGIN
         WHERE QUEUE = 999 -- Fila fictícia temporariamente suspensa
     )
     BEGIN
-        /*
-           Caso a fila bloqueada seja encontrada,
-           a operação inteira é cancelada.
-        */
         RAISERROR(
             'A fila "FILA_SUSPENSA_EXEMPLO" está temporariamente indisponível.',
             16,
