@@ -13,7 +13,7 @@ BEGIN
     )
     BEGIN
         RAISERROR(
-            'A fila "FILA_SUSPENSA_EXEMPLO" está temporariamente indisponível.',
+            'A fila "QUEUE_X" está temporariamente indisponível.',
             16,
             1
         );
