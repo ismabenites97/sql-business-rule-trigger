@@ -6,12 +6,12 @@ para bloquear o encaminhamento de solicitações para uma fila temporariamente s
 O objetivo do projeto é mostrar **a evolução da solução**, partindo de uma validação
 no fluxo (Stored Procedure) até a implementação correta no nível de dados (Trigger).
 
-> ⚠️ Todos os nomes de tabelas, colunas e filas são **fictícios** e usados apenas
+> Todos os nomes de tabelas, colunas e filas são **fictícios** e usados apenas
 > para fins educacionais e de portfólio.
 
 ---
 
-## 🧠 Contexto do Problema
+## Contexto do Problema
 
 Em um sistema de atendimento fictício, os usuários podem:
 
