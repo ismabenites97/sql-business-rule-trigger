@@ -9,7 +9,7 @@ BEGIN
     IF EXISTS (
         SELECT 1
         FROM INSERTED
-        WHERE QUEUE = 999 -- Fila fictícia temporariamente suspensa
+        WHERE QUEUE_CODE = 'QUEUE_X' -- Fila fictícia temporariamente suspensa
     )
     BEGIN
         RAISERROR(
