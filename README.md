@@ -39,7 +39,7 @@ responsável pelo encaminhamento do comentário.
 - Bloqueava a execução do encaminhamento
 - Exibia uma mensagem de erro ao usuário
 
-``
+```
 IF EXISTS (
     SELECT 1
     FROM COMMENT_QUEUE_ROUTING
@@ -56,7 +56,7 @@ BEGIN
     );
     RETURN;
 END; 
-``
+```
 
 ### Limitação da abordagem
 
