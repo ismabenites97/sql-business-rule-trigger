@@ -1,5 +1,7 @@
 # SQL Business Rule: Queue Blocking with Stored Procedure and Trigger
 
+---
+
 Este repositório demonstra a implementação de uma **regra de negócio em SQL Server**
 para bloquear o encaminhamento de solicitações para uma fila temporariamente.
 
@@ -23,8 +25,6 @@ Mesmo com validações no momento do encaminhamento, o sistema permitia que:
 - O bloqueio só ocorresse **depois**, no botão de encaminhar
 
 Isso gerava inconsistência de dados e comportamentos inesperados.
-
----
 
 ## Primeira abordagem: Stored Procedure (validação no fluxo)
 
