@@ -1,5 +1,4 @@
 # SQL Business Rule: Queue Blocking with Stored Procedure and Trigger
-
 ---
 
 Este repositório demonstra a implementação de uma **regra de negócio em SQL Server**
