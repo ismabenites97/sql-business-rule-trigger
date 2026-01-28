@@ -58,30 +58,31 @@ END;
 
 ### Limitação da abordagem
 
-Apesar de funcionar no momento do encaminhamento, essa solução **não impedia**
-que a fila suspensa fosse inserida previamente na aba de encaminhamento.
+Apesar de funcionar no momento do encaminhamento, essa solução não atendia ao
+requisito funcional do processo, pois o problema ocorria em um momento anterior
+da operação: na inserção da fila para encaminhamento.
 
-Ou seja, a validação ocorria tarde demais no fluxo do processo.
+Ou seja, a validação acontecia tarde demais no fluxo.
 
 Segunda abordagem: Trigger (validação no momento da inserção)
 
 📄 Arquivo: `trg_block_queue_on_comment_routing.sql`
 
 Diante da limitação da validação na Stored Procedure, foi adotada uma abordagem
-mais adequada do ponto de vista de integridade de dados: a criação de uma Trigger
-na tabela responsável pelo relacionamento entre encaminhamento e fila.
+mais adequada do ponto de vista de **integridade de dados**: a criação de uma
+**Trigger** na tabela responsável pelo relacionamento entre comentários e filas.
 
 O objetivo da Trigger é bloquear a operação no momento exato em que a fila é inserida,
-impedindo que dados inválidos sejam persistidos no banco.
+impedindo que a operação se estenda até ação do encamminhamento.
 
-O que a Trigger resolve
+### O que a Trigger resolve
 
 - Impede a inserção da fila suspensa logo na aba de encaminhamento
 - Garante que a regra de negócio seja aplicada independentemente do fluxo da aplicação
 - Evita que o usuário chegue à etapa de encaminhamento com dados inconsistentes
 - Centraliza a validação no nível do banco de dados
 
-Exemplo de Trigger implementada:
+### Exemplo de Trigger implementada:
 
 ```
 CREATE OR ALTER TRIGGER trg_block_queue_on_comment_routing
