@@ -76,13 +76,10 @@ impedindo que dados inválidos sejam persistidos no banco.
 
 O que a Trigger resolve
 
-Impede a inserção da fila suspensa logo na aba de encaminhamento
-
-Garante que a regra de negócio seja aplicada independentemente do fluxo da aplicação
-
-Evita que o usuário chegue à etapa de encaminhamento com dados inconsistentes
-
-Centraliza a validação no nível do banco de dados
+- Impede a inserção da fila suspensa logo na aba de encaminhamento
+- Garante que a regra de negócio seja aplicada independentemente do fluxo da aplicação
+- Evita que o usuário chegue à etapa de encaminhamento com dados inconsistentes
+- Centraliza a validação no nível do banco de dados
 
 Exemplo de Trigger implementada:
 
